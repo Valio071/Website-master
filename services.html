@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - Тоби Тобиас ЕОود | ECO Почистване с Пара</title>
+    <meta name="description" content="Професионални ECO услуги за почистване с пара. Абонаментно почистване на домове и офиси, почистване на бани и кухни, дълбоко почистване и изпиране на мека мебел.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #1A1B3A;
+            --secondary-navy: #2B2D5B;
+            --bright-yellow: #FFD700;
+            --vivid-blue: #4A90FF;
+            --success-green: #10B981;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --dark-text: #1A1B3A;
+            --light-text: #6B7280;
+            --yellow-hover: #FFC107;
+            --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 27, 58, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+        }
+
+        .logo {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--bright-yellow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--bright-yellow);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--bright-yellow);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Dropdown Menu */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(74, 144, 255, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--dark-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(74, 144, 255, 0.1);
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(74, 144, 255, 0.1);
+            color: var(--vivid-blue);
+            transform: translateX(5px);
+        }
+
+        .dropdown-item i {
+            margin-right: 0.5rem;
+            width: 16px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-contact i {
+            color: var(--bright-yellow);
+            font-size: 1.1rem;
+        }
+
+        .btn-quote {
+            background: var(--bright-yellow);
+            color: var(--primary-navy);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-quote:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            background: var(--yellow-hover);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--bright-yellow);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-navy), var(--secondary-navy));
+            z-index: 9999;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .mobile-nav-menu {
+            list-style: none;
+            padding: 2rem;
+        }
+
+        .mobile-nav-menu li {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInMobile 0.5s ease-out forwards;
+        }
+
+        .mobile-nav-menu li:nth-child(1) { animation-delay: 0.1s; }
+        .mobile-nav-menu li:nth-child(2) { animation-delay: 0.2s; }
+        .mobile-nav-menu li:nth-child(3) { animation-delay: 0.3s; }
+        .mobile-nav-menu li:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideInMobile {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .mobile-nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .mobile-nav-link:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--bright-yellow);
+            transform: translateX(10px);
+        }
+
+        .mobile-contact {
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-contact-item i {
+            color: var(--bright-yellow);
+            width: 20px;
+        }
+
+        /* Services Hero */
+        .services-hero {
+            padding: 8rem 0 4rem 0;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: var(--bright-yellow);
+            border-radius: 50%;
+            opacity: 0.1;
+            transform: translate(100px, -100px);
+        }
+
+        .services-hero h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            color: var(--bright-yellow);
+            font-weight: 900;
+        }
+
+        /* Service Detail Section */
+        .service-detail {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .service-detail:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .service-detail:nth-child(odd) {
+            background: var(--white);
+        }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Before/After Slider */
+        .before-after-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .before-after-slider {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: grab;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .before-after-slider:active {
+            cursor: grabbing;
+        }
+
+        .before-image,
+        .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .before-image {
+            background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=300&fit=crop');
+        }
+
+        .after-image {
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop');
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+            transition: clip-path 0.3s ease;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--vivid-blue), var(--bright-yellow));
+            cursor: ew-resize;
+            z-index: 3;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .slider-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vivid-blue), var(--bright-yellow));
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 15px rgba(74, 144, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .slider-handle::after {
+            content: '↔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .slider-handle:hover::before {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(74, 144, 255, 0.4);
+        }
+
+        .before-after-labels {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            right: 1rem;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .label {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Image Container Styles */
+        .service-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .service-image-container.slide-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .service-image-container:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .service-image-container:nth-child(even).slide-in {
+            transform: translateX(0);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-image-container:hover .service-image {
+            transform: scale(1.05);
+        }
+
+        .service-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 27, 58, 0.8), rgba(74, 144, 255, 0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .service-image-container:hover .service-image-overlay {
+            opacity: 1;
+        }
+
+        /* Content Animation */
+        .service-detail-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .service-detail-content.slide-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-detail-content h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(74, 144, 255, 0.1);
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: var(--success-green);
+            font-size: 1rem;
+        }
+
+        .service-icon-large {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--vivid-blue), var(--bright-yellow));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(74, 144, 255, 0.3);
+        }
+
+        .eco-badge-large {
+            background: var(--success-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .btn-contact {
+            background: var(--bright-yellow);
+            color: var(--primary-navy);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-contact:hover {
+            background: var(--yellow-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 4rem 0 2rem 0;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 2rem;
+            color: var(--bright-yellow);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--bright-yellow);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--bright-yellow), var(--yellow-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-navy);
+            transition: var(--transition);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--vivid-blue), var(--bright-yellow));
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-medium);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-large);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-right {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .service-detail-content h2 {
+                font-size: 2rem;
+            }
+
+            .before-after-container {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .before-after-slider {
+                height: 200px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .scroll-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-sparkles"></i>
+                Тоби Тобиас
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Начало</a></li>
+                <li class="nav-dropdown">
+                    <a href="services.html" class="nav-link active">Услуги <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html#home-cleaning" class="dropdown-item">
+                            <i class="fas fa-home"></i>Абонаментно почистване на домове
+                        </a>
+                        <a href="services.html#bathroom-cleaning" class="dropdown-item">
+                            <i class="fas fa-bath"></i>Почистване на бани
+                        </a>
+                        <a href="services.html#kitchen-cleaning" class="dropdown-item">
+                            <i class="fas fa-utensils"></i>Почистване на кухни
+                        </a>
+                        <a href="services.html#office-cleaning" class="dropdown-item">
+                            <i class="fas fa-briefcase"></i>Абонаментно почистване на офиси
+                        </a>
+                        <a href="services.html#home-detailing" class="dropdown-item">
+                            <i class="fas fa-sparkles"></i>Home Detailing - дълбоко почистване
+                        </a>
+                        <a href="services.html#upholstery-cleaning" class="dropdown-item">
+                            <i class="fas fa-couch"></i>Изпиране на мека мебел
+                        </a>
+                    </div>
+                </li>
+                <li><a href="index.html#testimonials" class="nav-link">Отзиви</a></li>
+                <li><a href="index.html#contact" class="nav-link">Контакт</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="nav-contact">
+                    <i class="fas fa-phone"></i>
+                    <span>+359 88 123 4567</span>
+                </div>
+                <a href="index.html#contact" class="btn-quote">
+                    <i class="fas fa-arrow-right"></i>
+                    Безплатна Оферта
+                </a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-sparkles"></i>
+                Тоби Тобиас
+            </a>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="mobile-nav-link" onclick="toggleMobileMenu()"><i class="fas fa-home"></i>Начало</a></li>
+            <li><a href="services.html" class="mobile-nav-link" onclick="toggleMobileMenu()"><i class="fas fa-briefcase"></i>Услуги</a></li>
+            <li><a href="index.html#testimonials" class="mobile-nav-link" onclick="toggleMobileMenu()"><i class="fas fa-comments"></i>Отзиви</a></li>
+            <li><a href="index.html#contact" class="mobile-nav-link" onclick="toggleMobileMenu()"><i class="fas fa-phone"></i>Контакт</a></li>
+        </ul>
+        <div class="mobile-contact">
+            <div class="mobile-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+359 88 123 4567</span>
+            </div>
+            <div class="mobile-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@tobi-tobias.bg</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Нашите <span class="highlight">Професионални</span> Услуги</h1>
+            <p>Предлагаме широка гама от специализирани услуги за почистване с 100% парна технология - безопасно, ефективно и екологично чисто.</p>
+        </div>
+    </section>
+
+    <!-- Service 1: Home Subscription Cleaning -->
+    <section class="service-detail" id="home-cleaning">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-image-container">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop" alt="Home Cleaning Service" class="service-image">
+                    <div class="service-image-overlay">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="eco-badge-large">ECO</div>
+                </div>
+                <div class="before-after-container">
+                    <div class="before-after-slider" data-service="home">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                    <div class="before-after-slider" data-service="home2">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Абонаментно почистване на домове</h2>
+                    <p>Абонаментното почистване на дома е най-лесният начин да се отървете от досадните ангажименти за почистване. Нашият професионален екип ще поддържа вашия дом в перфектно състояние с редовни посещения по график, който отговаря на вашите нужди.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> 1, 2, 4 или 8 посещения месечно</li>
+                        <li><i class="fas fa-check-circle"></i> Персонализирана оферта според вашите нужди</li>
+                        <li><i class="fas fa-check-circle"></i> Безплатна консултация и оценка</li>
+                        <li><i class="fas fa-check-circle"></i> Точност и коректност във всяко посещение</li>
+                        <li><i class="fas fa-check-circle"></i> Дискретност и лоялност</li>
+                        <li><i class="fas fa-check-circle"></i> Гъвкаво планиране на посещенията</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-contact">
+                        <i class="fas fa-calendar-check"></i>
+                        Заявете оферта
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 2: Bathroom Cleaning -->
+    <section class="service-detail" id="bathroom-cleaning">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="before-after-container">
+                    <div class="before-after-slider" data-service="bathroom">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                    <div class="before-after-slider" data-service="bathroom2">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Почистване на бани</h2>
+                    <p>Специализирано почистване на бани с парна технология, която ефективно премахва варовика, мухъла и бактериите без използване на агресивни химикали. Нашите специалисти работят с професионално оборудване за перфектни резултати.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Цялостно почистване на душ кабини</li>
+                        <li><i class="fas fa-check-circle"></i> Професионално почистване на вани и плочки</li>
+                        <li><i class="fas fa-check-circle"></i> Дезинфекция на тоалетни без химикали</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на фуги при нужда</li>
+                        <li><i class="fas fa-check-circle"></i> Премахване на варовик и водни петна</li>
+                        <li><i class="fas fa-check-circle"></i> Антибактериална защита с пара</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-contact">
+                        <i class="fas fa-calendar-check"></i>
+                        Заявете услугата
+                    </a>
+                </div>
+                <div class="service-image-container">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&h=300&fit=crop" alt="Bathroom Cleaning Service" class="service-image">
+                    <div class="service-image-overlay">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <div class="eco-badge-large">ECO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 3: Kitchen Cleaning -->
+    <section class="service-detail" id="kitchen-cleaning">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-image-container">
+                    <img src="https://images.unsplash.com/photo-1556909005-f8b8c50ac1cd?w=500&h=300&fit=crop" alt="Kitchen Cleaning Service" class="service-image">
+                    <div class="service-image-overlay">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="eco-badge-large">ECO</div>
+                </div>
+                <div class="before-after-container">
+                    <div class="before-after-slider" data-service="kitchen">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                    <div class="before-after-slider" data-service="kitchen2">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Почистване на кухни</h2>
+                    <p>Дълбоко почистване на кухни с парна технология, която ефективно премахва мазнините и замърсяванията от всички повърхности. Специално внимание се отделя на електроуредите и труднодостъпните места.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Почистване на всички електро уреди</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на шкафове - външно и вътрешно</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на всички плотове и пода</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на фуги при нужда</li>
+                        <li><i class="fas fa-check-circle"></i> Дегресиране с парна технология</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на абсорбатор и филтри</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-contact">
+                        <i class="fas fa-calendar-check"></i>
+                        Заявете услугата
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 4: Office Subscription Cleaning -->
+    <section class="service-detail" id="office-cleaning">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="before-after-container">
+                    <div class="before-after-slider" data-service="office">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                    <div class="before-after-slider" data-service="office2">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Абонаментно почистване на офиси</h2>
+                    <p>Професионално поддържане на офис пространства с гъвкави абонаментни планове. Осигуряваме чиста и здравословна работна среда за вашите служители и клиенти с редовни посещения по удобен за вас график.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> 1, 2, 4 или 8 посещения месечно</li>
+                        <li><i class="fas fa-check-circle"></i> Персонализирана оферта за бизнеса ви</li>
+                        <li><i class="fas fa-check-circle"></i> Безплатна консултация и планиране</li>
+                        <li><i class="fas fa-check-circle"></i> Точност и коректност в работното време</li>
+                        <li><i class="fas fa-check-circle"></i> Дискретност и професионализъм</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване извън работното време</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-contact">
+                        <i class="fas fa-calendar-check"></i>
+                        Заявете оферта
+                    </a>
+                </div>
+                <div class="service-image-container">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=300&fit=crop" alt="Office Cleaning Service" class="service-image">
+                    <div class="service-image-overlay">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="eco-badge-large">ECO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 5: Home Detailing -->
+    <section class="service-detail" id="home-detailing">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-image-container">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=300&fit=crop" alt="Deep Cleaning Service" class="service-image">
+                    <div class="service-image-overlay">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <div class="eco-badge-large">ECO</div>
+                </div>
+                <div class="before-after-container">
+                    <div class="before-after-slider" data-service="deep">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                    <div class="before-after-slider" data-service="deep2">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Home Detailing - дълбоко почистване</h2>
+                    <p>Home Detailing е нашата премиум услуга за дълбоко почистване, която включва всички детайли в дома. Перфектно решение след ремонт, преди празници или когато искате да освежите напълно вашето пространство.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Кърпене на прах от всички повърхности</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на тавани и високи места</li>
+                        <li><i class="fas fa-check-circle"></i> Основно и дълбоко почистване на дома</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на фуги при нужда</li>
+                        <li><i class="fas fa-check-circle"></i> Внимание към всички детайли</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване след ремонтни дейности</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-contact">
+                        <i class="fas fa-calendar-check"></i>
+                        Заявете услугата
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 6: Upholstery Cleaning -->
+    <section class="service-detail" id="upholstery-cleaning">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="before-after-container">
+                    <div class="before-after-slider" data-service="upholstery">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                    <div class="before-after-slider" data-service="upholstery2">
+                        <div class="before-image"></div>
+                        <div class="after-image"></div>
+                        <div class="slider-handle"></div>
+                        <div class="before-after-labels">
+                            <span class="label">Преди</span>
+                            <span class="label">След</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Изпиране на мека мебел</h2>
+                    <p>Професионално изпиране на мека мебел с помощта на специални професионални машини и безопасни препарати. Възстановяваме свежестта и чистотата на вашите любими мебели с деликатно отношение към тъканите.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Изпиране на дивани и фотьойли</li>
+                        <li><i class="fas fa-check-circle"></i> Почистване на столове и матраци</li>
+                        <li><i class="fas fa-check-circle"></i> Професионално изпиране на килими</li>
+                        <li><i class="fas fa-check-circle"></i> Специални машини и препарати</li>
+                        <li><i class="fas fa-check-circle"></i> Деликатно отношение към тъканите</li>
+                        <li><i class="fas fa-check-circle"></i> Премахване на петна и миризми</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-contact">
+                        <i class="fas fa-calendar-check"></i>
+                        Заявете услугата
+                    </a>
+                </div>
+                <div class="service-image-container">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=300&fit=crop" alt="Upholstery Cleaning Service" class="service-image">
+                    <div class="service-image-overlay">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <div class="eco-badge-large">ECO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Тоби Тобиас</h3>
+                    <p>Професионални услуги за почистване с парна технология за дълбока дезинфекция без химикали. Вашето здраве и комфорт са нашият приоритет.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="services.html#home-cleaning">Абонаментно почистване на домове</a></li>
+                        <li><a href="services.html#bathroom-cleaning">Почистване на бани</a></li>
+                        <li><a href="services.html#kitchen-cleaning">Почистване на кухни</a></li>
+                        <li><a href="services.html#office-cleaning">Офис почистване</a></li>
+                        <li><a href="services.html#home-detailing">Дълбоко почистване</a></li>
+                        <li><a href="services.html#upholstery-cleaning">Изпиране на мебели</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="index.html#equipment">Нашето оборудване</a></li>
+                        <li><a href="index.html#testimonials">Отзиви</a></li>
+                        <li><a href="services.html">Всички услуги</a></li>
+                        <li><a href="index.html#contact">Контакт</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p><i class="fas fa-phone"></i> +359 88 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@tobi-tobias.bg</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Витоша 15, София 1000</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Тоби Тобиас. Всички права запазени.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+
+        // Custom slide-in animation for service images and content
+        function initSlideInAnimations() {
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all service image containers and content
+            document.querySelectorAll('.service-image-container, .service-detail-content').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initSlideInAnimations);
+
+        // Before/After Slider functionality
+        function initBeforeAfterSliders() {
+            const sliders = document.querySelectorAll('.before-after-slider');
+            
+            sliders.forEach(slider => {
+                const handle = slider.querySelector('.slider-handle');
+                const afterImage = slider.querySelector('.after-image');
+                let isDragging = false;
+
+                // Set different images for each service
+                const serviceType = slider.dataset.service;
+                const beforeImg = slider.querySelector('.before-image');
+                const afterImg = slider.querySelector('.after-image');
+
+                // Home cleaning images
+                if (serviceType.includes('home')) {
+                    beforeImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=300&fit=crop')";
+                    afterImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop')";
+                }
+                
+                // Bathroom cleaning images
+                if (serviceType.includes('bathroom')) {
+                    beforeImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&h=300&fit=crop')";
+                    afterImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1587560699334-bea56c58217c?w=500&h=300&fit=crop')";
+                }
+                
+                // Kitchen cleaning images
+                if (serviceType.includes('kitchen')) {
+                    beforeImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1556909005-f8b8c50ac1cd?w=500&h=300&fit=crop')";
+                    afterImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1556909114-4b9d4d0b3b5b?w=500&h=300&fit=crop')";
+                }
+                
+                // Office cleaning images
+                if (serviceType.includes('office')) {
+                    beforeImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=300&fit=crop')";
+                    afterImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=500&h=300&fit=crop')";
+                }
+                
+                // Deep cleaning images
+                if (serviceType.includes('deep')) {
+                    beforeImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=300&fit=crop')";
+                    afterImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=300&fit=crop')";
+                }
+                
+                // Upholstery cleaning images
+                if (serviceType.includes('upholstery')) {
+                    beforeImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=300&fit=crop')";
+                    afterImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=300&fit=crop')";
+                }
+
+                function updateSlider(clientX) {
+                    const rect = slider.getBoundingClientRect();
+                    const offsetX = clientX - rect.left;
+                    const percentage = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
+                    
+                    handle.style.left = percentage + '%';
+                    afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+                }
+
+                // Mouse events
+                handle.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    e.preventDefault();
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        updateSlider(e.clientX);
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                // Touch events for mobile
+                handle.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    e.preventDefault();
+                });
+
+                slider.addEventListener('touchmove', (e) => {
+                    if (isDragging) {
+                        const touch = e.touches[0];
+                        updateSlider(touch.clientX);
+                        e.preventDefault();
+                    }
+                });
+
+                document.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+
+                // Click to position
+                slider.addEventListener('click', (e) => {
+                    if (e.target !== handle) {
+                        updateSlider(e.clientX);
+                    }
+                });
+            });
+        }
+
+        // Initialize sliders when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initBeforeAfterSliders);
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu on window resize if open
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
