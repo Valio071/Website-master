@@ -3005,49 +3005,125 @@
                 display: block;
             }
 
+            /* Critical Mobile Hero Fix */
             .hero {
-                min-height: 100vh;
-                height: 100vh;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+                min-height: auto !important;
+                height: auto !important;
+                padding: 80px 0 40px 0 !important;
+                display: block !important;
             }
 
             .hero-container {
-                padding: 6rem 1.5rem 2rem;
+                padding: 2rem 1.5rem !important;
+                max-width: 100% !important;
                 width: 100%;
-                max-width: 500px;
                 margin: 0 auto;
-                position: relative;
-                z-index: 2;
+                position: relative !important;
+                z-index: 10 !important;
             }
 
             .hero-content-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2rem !important;
+                align-items: stretch !important;
                 text-align: center;
                 margin-bottom: 0;
                 padding: 0;
-                align-items: center;
-                min-height: auto;
             }
 
+            /* Fix overlapping title */
             .hero-title {
+                margin-bottom: 1.5rem !important;
+                position: relative !important;
+                z-index: 10 !important;
                 text-align: center;
-                margin-bottom: 2rem;
             }
 
             .hero-title h1 {
-                font-size: 3.2rem;
-                line-height: 1.1;
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
                 margin-bottom: 1rem;
                 text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
                 letter-spacing: -1px;
-                position: relative;
-                z-index: 10;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+
+            /* Fix description positioning */
+            .hero-description {
+                margin-bottom: 1.5rem !important;
+                position: relative !important;
+                z-index: 10 !important;
+                text-align: center;
+            }
+
+            .hero-description p {
+                font-size: 1.1rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 1.5rem !important;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+
+            /* Fix trust indicators */
+            .hero-trust-indicators {
+                display: flex !important;
+                justify-content: space-around !important;
+                gap: 1rem !important;
+                margin: 1.5rem 0 !important;
+                flex-wrap: nowrap !important;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+
+            .trust-item {
+                flex: 1 !important;
+                min-width: 0 !important;
+                text-align: center;
+            }
+
+            .trust-number {
+                font-size: 2rem !important;
+            }
+
+            .trust-text {
+                font-size: 0.8rem !important;
+            }
+
+            /* Fix buttons */
+            .hero-buttons {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 1rem !important;
+                margin-bottom: 2rem !important;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+
+            .hero-buttons .btn {
+                width: 100% !important;
+                max-width: none !important;
+                padding: 1rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+
+            /* Services card section - make it collapsible or hidden on mobile */
+            .hero-services {
+                display: none !important;
+            }
+
+            /* Remove decorative elements that cause overlap */
+            .decoration-sparkles {
+                display: none !important;
+            }
+
+            /* Ensure proper stacking order */
+            .hero > * {
+                position: relative !important;
+                z-index: 2 !important;
             }
 
             .section-spacing {
@@ -3263,7 +3339,24 @@
             }
         }
 
+        /* Ultra-small devices fix */
         @media (max-width: 480px) {
+            .hero-title h1 {
+                font-size: 1.8rem !important;
+            }
+            
+            .hero-description p {
+                font-size: 1rem !important;
+            }
+            
+            .trust-number {
+                font-size: 1.5rem !important;
+            }
+            
+            .trust-text {
+                font-size: 0.7rem !important;
+            }
+            
             .container {
                 padding: 0 1rem;
             }
